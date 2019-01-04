@@ -1,6 +1,7 @@
-var animationEngine = new AnimationEngine(4);
+var animationEngine0 = new AnimationEngine(24);
 
-animationEngine.setAnimationFrameCallback(update);
+var animationEngine1 = new AnimationEngine(4);
+
 
 var cHeight = canvas.height;
 var cWidth = canvas.width;
@@ -41,7 +42,11 @@ function setup() {
 
     setLeftClickCallback(mouseDown);
     drawGrid();
-    animationEngine.start();
+
+    animationEngine0.setAnimationFrameCallback(update0);
+    animationEngine1.setAnimationFrameCallback(update1);
+    animationEngine0.start();
+    animationEngine1.start();
 }
 
 function mouseDown(coordinates) {
@@ -140,15 +145,17 @@ function spread() {
 }
 
 //update is assigned to the animation engine
-function update() {
+function update0() {
 
     clearCanvas();
     drawGrid();
+}
+
+function update1() {
 
     if (isAlive) {
         spread();
     }
-
 }
 
 function startLife() {
