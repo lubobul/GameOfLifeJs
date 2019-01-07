@@ -162,7 +162,7 @@ function startLife() {
     isAlive = true;
 }
 
-function stopLife() {
+function pauseLife() {
     isAlive = false;
 }
 
